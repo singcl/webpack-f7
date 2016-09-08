@@ -22,33 +22,12 @@ export default {
 		return _m + '月' + _d + '日 ' + _h + ':' + _s;
     },
     setQuery() {
-        var term, year, query;
         var value1 = $('#picker-device').val();
         var value2 = $('#picker-device-2').val();
         if (value1 && value2) {
-            switch (value1) {
-                case '2015-2016':
-                    year = 2016;
-                    break;
-                case '2016-2017':
-                    year = 2017;
-                    break;
-                default:
-                    break;             
-            }
-
-            switch (value2) {
-                case '第一学期':
-                    term = 1;
-                    break;
-                case '第二学期':
-                    term = 2;
-                    break;
-                default:
-                    break;        
-            }
-
-            query = 'year='+ year + '&term=' + term;
+            var year = {'2015-2016': '2016', '2016-2017': '2017'}[value1];
+            var term = {'第一学期': '1', '第二学期': '2'}[value2];
+            var query = 'year='+ year + '&term=' + term;
             $('#go-to-detail').attr('href','page/detail.html?' + query);
         }
     }
