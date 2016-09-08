@@ -1,40 +1,33 @@
-<div class="navbar">
-    <div class="navbar-inner">
-      <div class="left">
-          <a href="#" class="back link"><i class="icon icon-back"></i>返回</a>
-      </div>
-      <div class="center">{{title}}</div>
+
+{{#each this}}
+<div class="content-block">
+    <div class="thesis">
+    	<h3>{{name}}</h3>
+    	<p>学分：<span class="color-red">{{credit}}</span>  绩点：<span class="color-red">{{point}}</span></p>
+    </div>
+    <div class="score text-center">
+    	<ul>
+    		<li class="score-item">
+    			<span>{{total}}</span>
+    			<span>总评</span>
+    		</li>
+    		<li class="score-item">
+    			<span>{{ending}}</span>
+    			<span>期末</span>
+    		</li>
+    		<li class="score-item">
+    			<span>{{usually}}</span>
+    			<span>平时</span>
+    		</li>
+    		<li class="score-item">
+    			<span>{{experiment}}</span>
+    			<span>实验</span>
+    		</li>
+    		<li class="score-item">
+    			<span>{{makeupExamination}}</span>
+    			<span>补考</span>
+    		</li>
+    	</ul>
     </div>
 </div>
-<div class="page-content detail-page">
-    <div class="content-block">
-        <div class="thesis">
-        	<h3>毕业设计</h3>
-        	<p>学分：{{score}} 绩点：{{point}}</p>
-        </div>
-        <div class="score text-center">
-        	<ul>
-        		<li class="score-item">
-        			<span>良好</span>
-        			<span>总评</span>
-        		</li>
-        		<li class="score-item">
-        			<span>良好</span>
-        			<span>总评</span>
-        		</li>
-        		<li class="score-item">
-        			<span>良好</span>
-        			<span>总评</span>
-        		</li>
-        		<li class="score-item">
-        			<span>良好</span>
-        			<span>总评</span>
-        		</li>
-        		<li class="score-item">
-        			<span>良好</span>
-        			<span>总评</span>
-        		</li>
-        	</ul>
-        </div>
-    </div>
-</div>
+{{/each}}

@@ -12,41 +12,31 @@ import Loading from '../components/loading';
 
 export default {
     init(page){
-        var _TM = page.query.terms;
-        this.getPersonDetail(_TM);
+        var QU = page.query;
+        this.getPersonDetail(QU);
         this.bindEvent();
+        this.setDetailTitle(QU);
     },
-    getPersonDetail(terms){
+    getPersonDetail(QU) {
         Loading.show();
         var params = {
-            terms: terms,
+            term: QU.term,
+            year: QU.year,
             success: (res) => {
                 console.log(res);
                 Loading.hide();
-                var html = Tool.renderTpl(detailTpl, res);
+                var data = res.result;
+                var html = Tool.renderTpl(detailTpl, data);
                 //或者这样 var html = Template7.compile(detailTpl)(res);
-                $('.page[data-page="detail"]').append(html);
+                $('.detail-page').append(html);
             },
             error: (err) => {
                 console.log(err);
             }
         };
-        Xhr.getDetailByTerms(params);
+        Xhr.getDetailByYT(params);
     },
-    showActionSheet(){
-        var btns = [{
-                text:'回复',
-                onClick(){
-                    Modal.alert('你点击了回复');
-                }
-            }];
-        showActionSheet(btns);
-    },
-    showPhotoBrowser(){
-        var _img = $(this); //注意这个this
-        showPhotoBrowser(new Array(1).fill(_img.attr('src')));
-        
-    },
+    
     bindEvent(){
         var events = [
             {
@@ -62,5 +52,9 @@ export default {
             }
         ];
         Tool.bindEvents(events);
+    },
+
+    setDetailTitle(QU) {
+        $('.yt-title').html(QU.year + '学年第' + QU.term + '学期');
     }
 };

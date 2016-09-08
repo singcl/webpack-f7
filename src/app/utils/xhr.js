@@ -7,15 +7,16 @@ export default {
     //     params.path = '/api/v1/topics/?page=' + params.page + '&tab=' + params.tab + '&limit=10';
     //     request(params);
     // },
-    getDetailByTerms(params) {
-        params.path = params.terms;
+    getDetailByYT(params) {
+        // params.path = '/achievement/001/query?year=' + params.year + '&term=' + params.term;
+        params.path = '/mock.json';
         request(params);
     }
 };
 
 function request(params) {
     var defaults = {
-        url: Constant.SERVER_URL + 'mock.json',
+        url: Constant.SERVER_URL + params.path,
         type: 'GET',
         contentType: 'application/json',
         dataType: 'json',

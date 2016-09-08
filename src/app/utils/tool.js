@@ -23,9 +23,9 @@ export default {
     },
     setQuery() {
         var term, year, query;
-        var value1 = $('#picker-device').attr('value');
-        var value2 = $('#picker-device-2').attr('value');
-        if (value1) {
+        var value1 = $('#picker-device').val();
+        var value2 = $('#picker-device-2').val();
+        if (value1 && value2) {
             switch (value1) {
                 case '2015-2016':
                     year = 2016;
@@ -36,8 +36,7 @@ export default {
                 default:
                     break;             
             }
-        }
-        if (value2) {
+
             switch (value2) {
                 case '第一学期':
                     term = 1;
@@ -48,10 +47,9 @@ export default {
                 default:
                     break;        
             }
+
+            query = 'year='+ year + '&term=' + term;
+            $('#go-to-detail').attr('href','page/detail.html?' + query);
         }
-        if (value1 && value2) {
-            query = 'yera=&'+ year + 'term=' + term;
-        }
-        $('#go-to-detail').attr('href','page/detail.html?' + query);
     }
 };
