@@ -12,26 +12,26 @@ import Loading from '../components/loading';
 
 export default {
     init(page){
-        var _ID = page.query.id;
-        this.getTopicDetail(_ID);
+        var _TM = page.query.terms;
+        this.getPersonDetail(_TM);
         this.bindEvent();
     },
-    getTopicDetail(id){
+    getPersonDetail(terms){
         Loading.show();
         var params = {
-            id: id,
+            terms: terms,
             success: (res) => {
                 console.log(res);
                 Loading.hide();
-                res.data.create_at = Tool.publishTime(res.data.create_at);
-                var detailTPl = Tool.renderTpl(detailTpl, res.data);
-                $('.detail-page').append($(detailTPl));
+                var html = Tool.renderTpl(detailTpl, res);
+                //或者这样 var html = Template7.compile(detailTpl)(res);
+                $('.page[data-page="detail"]').append(html);
             },
             error: (err) => {
                 console.log(err);
             }
         };
-        Xhr.getDetailById(params);
+        Xhr.getDetailByTerms(params);
     },
     showActionSheet(){
         var btns = [{

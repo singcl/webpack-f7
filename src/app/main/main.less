@@ -1,47 +1,43 @@
-.main-page{
-    .list-block{
-        margin: 0;
-        .item-text {
-            font-size: 16px;
-            color: #333;
-            span{
-                padding: 2px 5px;
-                line-height: 20px;
-                background: #ddd;
-                color: #666;
-                border-radius: 2px;
-                font-size: 12px;
-                margin-right: 5px;
-            }
-        }
-        .item-text.top span,.item-subtitle.good span{
-            background: #47B04B;
-            color: #fff;
-        }
-        .item-title{
-            color: #666;
-            span{
-                color: #9e78c0;
-            }
-        }
-        .item-title-row{
-            font-size: 14px;
-            margin-top: 5px;
-            color: #757575;
-            font-weight: 400;
+.main-page {
+    background-color: #eef1f2;;
+    .content-block {
+        margin-top: 56px;
+        min-height: 250px;
+        padding-top: 25px;
+        padding-bottom: 25px;
+        background-color: #fff;
+        .avatar {
+        border-radius: 50%;
         }
     }
-    .list-block.media-list .item-link .item-title-row{
-        background: none;
-        padding-right: 0;
+
+    .list-block {
+        padding: 0 16px;
     }
-    .infinite-scroll-preloader {
-        margin-top:-20px;
-        margin-bottom: 10px;
+
+    .list-block ul li {
+        margin: 10px 2px;
         text-align: center;
+        background-color: #fff;
+        border-radius: 30px;
+        .item-input:after {
+            height: 0;
+        }
+        .item-input input {
+            text-align: center;
+        }
     }
-    .infinite-scroll-preloader .preloader {
-        width:34px;
-        height:34px;
-    }    
+    
+    a.button {
+        height: auto;
+        margin: 0px 16px;
+        padding: 5px 0;
+        font-size: 16px;
+        border-radius: 15px;
+    }
+
+    .tips {
+        padding: 5px 16px;
+    }
+
 }

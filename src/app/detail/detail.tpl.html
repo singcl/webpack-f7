@@ -1,28 +1,40 @@
- <h3 class="topic-title">{{title}}</h3>
- <div class="authr-info row">
-     <img src="{{author.avatar_url}}" alt="{{author.loginname}}" width="30">
-     发布时间: {{create_at}} /
-     回复: {{js "this.replies.length"}} /
-     浏览数: {{visit_count}}
+<div class="navbar">
+    <div class="navbar-inner">
+      <div class="left">
+          <a href="#" class="back link"><i class="icon icon-back"></i>返回</a>
+      </div>
+      <div class="center">{{title}}</div>
+    </div>
 </div>
-<div class="content-block">
-    <p>{{content}}</p>
-</div>
-<div class="content-block-title">评论</div>
-<div class="list-block media-list">
-    <ul>
-        {{#each replies}}
-        <li class="comment-list">
-            <div class="item-link item-content">
-                <div class="item-media"><img src="{{author.avatar_url}}" width="44"></div>
-                <div class="item-inner">
-                    <div class="item-title-row">
-                        <div class="item-title">{{author.loginname}}</div>
-                    </div>
-                    <div class="item-subtitle">{{content}}</div>
-                </div>
-            </div>
-        </li>
-        {{/each}}
-    </ul>
+<div class="page-content detail-page">
+    <div class="content-block">
+        <div class="thesis">
+        	<h3>毕业设计</h3>
+        	<p>学分：{{score}} 绩点：{{point}}</p>
+        </div>
+        <div class="score text-center">
+        	<ul>
+        		<li class="score-item">
+        			<span>良好</span>
+        			<span>总评</span>
+        		</li>
+        		<li class="score-item">
+        			<span>良好</span>
+        			<span>总评</span>
+        		</li>
+        		<li class="score-item">
+        			<span>良好</span>
+        			<span>总评</span>
+        		</li>
+        		<li class="score-item">
+        			<span>良好</span>
+        			<span>总评</span>
+        		</li>
+        		<li class="score-item">
+        			<span>良好</span>
+        			<span>总评</span>
+        		</li>
+        	</ul>
+        </div>
+    </div>
 </div>

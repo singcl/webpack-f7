@@ -1,0 +1,102 @@
+.avatar {
+	position: relative;
+	display: block;
+	white-space: nowrap;
+	border-radius: 50%;
+}
+
+.avatar img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+.thumb-xl {
+  display: inline-block;
+  width: 128px;
+}
+
+.thumb-lg {
+  display: inline-block;
+  width: 96px;
+}
+
+.thumb-md {
+  display: inline-block;
+  width: 64px;
+}
+
+.thumb {
+  display: inline-block;
+  width: 50px;
+}
+
+.thumb-sm {
+  display: inline-block;
+  width: 40px;
+}
+
+.thumb-xs {
+  display: inline-block;
+  width: 34px;
+}
+
+.thumb-xxs {
+  display: inline-block;
+  width: 30px;
+}
+
+.thumb-wrapper {
+  padding: 2px;
+  border: 1px solid #dee5e7;
+}
+
+.thumb img,
+.thumb-xs img,
+.thumb-sm img,
+.thumb-md img,
+.thumb-lg img,
+.thumb-btn img {
+  height: auto;
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.text-3x {
+  font-size: 3em;
+}
+
+.text-2x {
+  font-size: 2em;
+}
+
+.text-lg {
+  font-size: 18px;
+}
+
+.text-md {
+  font-size: 16px;
+}
+
+.text-base {
+  font-size: 14px;
+}
+
+.text-sm {
+  font-size: 13px;
+}
+
+.text-xs {
+  font-size: 12px;
+}
+
+.text-xxs {
+  text-indent: -9999px;
+}
+
+.text-muted {
+  color: #98a6ad;
+}

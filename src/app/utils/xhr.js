@@ -3,19 +3,19 @@
 import Constant from './constant';
 
 export default {
-    getTopics(params) {
-        params.path = '/api/v1/topics/?page=' + params.page + '&tab=' + params.tab + '&limit=10';
-        request(params);
-    },
-    getDetailById(params) {
-        params.path = '/api/v1/topic/' + params.id;
+    // getQuery(params) {
+    //     params.path = '/api/v1/topics/?page=' + params.page + '&tab=' + params.tab + '&limit=10';
+    //     request(params);
+    // },
+    getDetailByTerms(params) {
+        params.path = params.terms;
         request(params);
     }
 };
 
 function request(params) {
     var defaults = {
-        url: Constant.SERVER_URL + params.path,
+        url: Constant.SERVER_URL + 'mock.json',
         type: 'GET',
         contentType: 'application/json',
         dataType: 'json',
