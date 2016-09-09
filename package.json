@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack-dev-server -d --progress --colors --inline --hot --host 172.16.1.92 --port 8080",
+    "dev": "webpack-dev-server -d --progress --colors --inline --hot --host 192.168.0.103 --port 8080",
     "build": "set NODE_ENV=production && webpack -p --colors"
   },
   "author": "Hejx",

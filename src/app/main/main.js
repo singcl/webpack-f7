@@ -12,8 +12,8 @@ export default {
         //下面的初始化函数必须按一定顺序。即必须先有dom文档
         this.renderMainTpl(data);
         this.setAvatar(Constant.AVATAR);
-        this.showPicker();
         Tool.setQuery(data);
+        this.showPicker(data);
     },
 
     renderMainTpl(data) {
@@ -21,7 +21,7 @@ export default {
         $('.main-page .page-content').html(html);
     },
 
-    showPicker() {
+    showPicker(data) {
         var defaults = [
             {
                 input: '#picker-device',
@@ -42,8 +42,7 @@ export default {
                 ]
             }
         ]
-
-        var pickerArr = Picker.showPicker(defaults);
+        Picker.showPicker(defaults, data);
     },
 
     setAvatar(pic){

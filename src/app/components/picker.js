@@ -2,14 +2,14 @@
 
 import Tool from '../utils/tool';
 export default {
-    showPicker (params) {
+    showPicker (params, data) {
         var pickerArr = [];
         $.each(params, function(index, value) {
             var myPicker = myApp.picker({
                 input: params[index].input,
                 cols: params[index].cols,
                 onClose: function () {
-                    Tool.setQuery();
+                    Tool.setQuery(data);
                 }
             });
             pickerArr.push(myPicker);

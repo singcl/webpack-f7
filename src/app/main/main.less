@@ -35,11 +35,27 @@
             height: 0;
            
         }
-        .item-input:after {
-            height: 0;
-        }
-        .item-input input {
-            text-align: center;
+        .item-input {
+            position: relative;
+            display: inline-table;
+            span:first-child {
+                font-size: 18px;
+                font-weight: 700;
+            }
+            &:after {
+                height: 0;
+            }
+            label {
+                display: inline-table;
+                    input {
+                    display: table-cell;
+                    text-align: center;
+                }
+                span {
+                    display: table-cell;
+                    font-size: 16px;
+                }
+            }
         }
     }
     

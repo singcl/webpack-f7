@@ -27,7 +27,7 @@ export default {
                 console.log(res);
                 Loading.hide();
                 var data = res.result;
-                // data = Tool.transformData(data);
+                data = Tool.transformData(data);
                 var html = Tool.renderTpl(detailTpl, data);
                 //或者这样 var html = Template7.compile(detailTpl)(res);
                 $('.detail-page').append(html);
