@@ -13,22 +13,23 @@ export default {
     renderTpl(tpl, data){
         return Template7.compile(tpl)(data);
     },
-    publishTime(date){
-        var _date = new Date(date),
-			_m = _date.getMonth() + 1,
-			_d = _date.getDate(),
-			_h = _date.getHours(),
-			_s = _date.getMinutes();
-		return _m + '月' + _d + '日 ' + _h + ':' + _s;
-    },
-    setQuery() {
+    setQuery(data) {
         var value1 = $('#picker-device').val();
         var value2 = $('#picker-device-2').val();
         if (value1 && value2) {
             var year = {'2015-2016': '2016', '2016-2017': '2017'}[value1];
             var term = {'第一学期': '1', '第二学期': '2'}[value2];
-            var query = 'year='+ year + '&term=' + term;
+            var query = 'user_id=' + data.user_id + '&year='+ year + '&term=' + term;
             $('#go-to-detail').attr('href','page/detail.html?' + query);
-        }
+        } 
+    },
+
+    transformData(params) {
+        $.each(params, function(index, value) {
+            $.each(value, function(key, val) {
+                if (val = "") {val == "-"};
+            })
+        })
+        return params;
     }
 };

@@ -7,16 +7,18 @@ import Constant from '../utils/constant';
 import Picker from '../components/picker';
 
 export default {
-    init(){
+    init(data) {
         var that = this;
         //下面的初始化函数必须按一定顺序。即必须先有dom文档
-        this.renderMainTpl();
+        this.renderMainTpl(data);
         this.setAvatar(Constant.AVATAR);
-        this.showPicker();  
+        this.showPicker();
+        Tool.setQuery(data);
     },
 
-    renderMainTpl() {
-        $('.main-page .page-content').html(mainHtml);
+    renderMainTpl(data) {
+        var html = Tool.renderTpl(mainHtml, data);
+        $('.main-page .page-content').html(html);
     },
 
     showPicker() {

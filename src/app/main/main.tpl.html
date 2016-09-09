@@ -3,7 +3,7 @@
         <div class="avatar thumb-lg">
             <img src="">
         </div>
-        <p class="text-lg text-muted font-bold">李树文</p>  
+        <p class="text-lg text-muted font-bold">{{name}}</p> 
     </div>
 </div>
 
@@ -13,7 +13,7 @@
             <div class="item-content">
                 <div class="item-inner">
                     <div class="item-input">
-                        <input type="text" placeholder="2015-2016" readonly id="picker-device">
+                        <input type="text" placeholder="2015-2016" readonly id="picker-device" value="2015-2016">
                     </div>
                 </div>
             </div>
@@ -22,12 +22,14 @@
             <div class="item-content">
                 <div class="item-inner">
                     <div class="item-input">
-                        <input type="text" placeholder="第一学期" readonly id="picker-device-2">
+                        <label>学期</label>
+                        <input type="text" placeholder="第一学期" readonly id="picker-device-2" value="第一学期">
                     </div>
                 </div>
             </div>
         </li>
     </ul>
 </div>
+<!-- <a href="" class="button button-fill button-primary testBtn">hhhh</a> -->
 <a href="#" class="button button-fill color-blue" id="go-to-detail">查询</a>
-<p class="tips">人家只是是查询机器人，最终成绩一学校公布的成绩为准。</p>
+<p class="tips text-muted">人家只是查询机器人，最终成绩一学校公布的成绩为准哦。</p>

@@ -7,9 +7,11 @@ import '../assets/app.less';
 
 import mainModule from './main/main';
 import Router from './router';
+import Loading from './components/loading';
 
 var app = {
     init(){
+        var that = this;
         // Init App
         window.$ = Dom7;
         window.myApp = new Framework7({
@@ -19,21 +21,43 @@ var app = {
         myApp.addView('.view-main', {
             domCache: true
         });
-        
-        mainModule.init();
+    
         Router.init();
     },
     // 如果需要调用cordova 需要在deviceReady后 调用 mainModule.init()
-    deviceReady(){
+    deviceReady() {
         document.addEventListener('deviceready', function() {
-            // 绑定返回事件
-            document.addEventListener("backbutton", function(){
-                app.cordovaBackEvent();
-            }, false);
+            Loading.show();
+            app.getUserInfo();
         }, false);
     },
-    cordovaBackEvent(){
-        // 物理返回事件
+    
+    getUserInfo() {
+        cordova.exec(function(result) {
+            Loading.hide();
+            var data = {
+                user_id: result.user_id,
+                name: result.name,
+                avatar: result.avatar
+            }
+            console.log('获取数据成功：' + result);
+            mainModule.init(data);
+        }, function(error) { 
+            alert('失败');
+        }, 'WorkPlus_Contact', 'getUserInfo', []);
     }
 };
+
+//初始化基本设置
 app.init();
+//设备就绪后开始初始化主页
+app.deviceReady();
+
+/*
+var data = {
+   'user_id': 'w332q44442ewrdsvvgdrgrgdv32323',
+    'name': 'xxxxx',
+    'avatar': null
+}
+mainModule.init(data);
+*/

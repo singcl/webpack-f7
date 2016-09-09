@@ -3,11 +3,16 @@
     .content-block {
         margin-top: 56px;
         min-height: 250px;
-        padding-top: 25px;
-        padding-bottom: 25px;
+        padding-top: 10px;
         background-color: #fff;
         .avatar {
         border-radius: 50%;
+        }
+        :before {
+            height: 0;
+        }
+        :after {
+            height: 0;
         }
     }
 
@@ -15,11 +20,21 @@
         padding: 0 16px;
     }
 
+    .list-block ul:before,
+    .list-block ul:after {
+        height: 0;
+    }
+
     .list-block ul li {
         margin: 10px 2px;
         text-align: center;
         background-color: #fff;
         border-radius: 30px;
+        .item-inner:before,
+        .item-inner:after {
+            height: 0;
+           
+        }
         .item-input:after {
             height: 0;
         }
