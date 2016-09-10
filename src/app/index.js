@@ -24,7 +24,8 @@ var app = {
     
         Router.init();
     },
-    // 如果需要调用cordova 需要在deviceReady后 调用 mainModule.init()
+    
+    //如果需要调用cordova 需要在deviceReady后 调用 mainModule.init()
     deviceReady() {
         document.addEventListener('deviceready', function() {
             Loading.show();
@@ -52,7 +53,6 @@ var app = {
 app.init();
 //设备就绪后开始初始化主页
 app.deviceReady();
-
 /*
 var data = {
    'user_id': 'w332q44442ewrdsvvgdrgrgdv32323',

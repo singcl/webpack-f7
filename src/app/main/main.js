@@ -46,7 +46,7 @@ export default {
     },
 
     setAvatar(pic){
-        var _avatarElm = $('.avatar.thumb-lg img');
+        var _avatarElm = $('.avatar img');
         _avatarElm.attr('src', pic);
     }
 };
