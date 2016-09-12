@@ -16,7 +16,8 @@ var app = {
         window.$ = Dom7;
         window.myApp = new Framework7({
             // Enable Material theme
-            material: true,
+            material:true
+            
         });
         myApp.addView('.view-main', {
             domCache: true
@@ -53,11 +54,10 @@ var app = {
 app.init();
 //设备就绪后开始初始化主页
 app.deviceReady();
-/*
-var data = {
+
+/*var data = {
    'user_id': 'w332q44442ewrdsvvgdrgrgdv32323',
     'name': 'xxxxx',
     'avatar': null
 }
-mainModule.init(data);
-*/
+mainModule.init(data);*/

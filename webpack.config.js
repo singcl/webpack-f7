@@ -21,7 +21,9 @@ var config = {
     alias: {
         'framework7': __f7Path + '/js/framework7.js',
         'framework7.material.css': __f7Path + '/css/framework7.material.css',
-        'framework7.material.color.css': __f7Path + '/css/framework7.material.colors.css'
+        'framework7.material.color.css': __f7Path + '/css/framework7.material.colors.css',
+        'framework7.ios.css': __f7Path + '/css/framework7.ios.css',
+        'framework7.ios.color.css': __f7Path + '/css/framework7.ios.colors.css'
     }
   },
   // how modules should be transformed

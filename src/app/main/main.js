@@ -14,6 +14,7 @@ export default {
         this.setAvatar(Constant.AVATAR);
         Tool.setQuery(data);
         this.showPicker(data);
+        this.exitCurrent();
     },
 
     renderMainTpl(data) {
@@ -48,5 +49,17 @@ export default {
     setAvatar(pic){
         var _avatarElm = $('.avatar img');
         _avatarElm.attr('src', pic);
+    },
+
+    exitCurrent() {
+        $('.main-page .exit').on('click', function () {
+            document.addEventListener('deviceready', function() {
+                cordova.exec(function(result) {
+                    console.log('退出轻应用成');
+                }, function(error) { 
+                    console.log('退出轻应用失败');
+               }, 'WorkPlus_WebView', 'exit', []);
+            }, false)
+        })
     }
 };
