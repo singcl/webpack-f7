@@ -30,7 +30,7 @@ export default {
                 data = Tool.transformData(data);
                 var html = Tool.renderTpl(detailTpl, data);
                 //或者这样 var html = Template7.compile(detailTpl)(res);
-                $('.detail-page').append(html);
+                $('.detail-page .page-content').append(html);
             },
             error: (err) => {
                 console.log(err);

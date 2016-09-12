@@ -1,8 +1,8 @@
 'use strict';
 
 import 'framework7';
-import 'framework7.material.css';
-import 'framework7.material.color.css';
+import 'framework7.ios.css';
+import 'framework7.ios.color.css';
 import '../assets/app.less';
 
 import mainModule from './main/main';
@@ -16,7 +16,7 @@ var app = {
         window.$ = Dom7;
         window.myApp = new Framework7({
             // Enable Material theme
-            material:true
+            //material:true
             
         });
         myApp.addView('.view-main', {
@@ -60,4 +60,5 @@ app.deviceReady();
     'name': 'xxxxx',
     'avatar': null
 }
-mainModule.init(data);*/
+mainModule.init(data);
+*/
