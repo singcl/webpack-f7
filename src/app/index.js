@@ -53,12 +53,11 @@ var app = {
 //初始化基本设置
 app.init();
 //设备就绪后开始初始化主页
-app.deviceReady();
+//app.deviceReady();
 
-/*var data = {
-   'user_id': 'w332q44442ewrdsvvgdrgrgdv32323',
+var data = {
+   'user_id': '3120604130',
     'name': 'xxxxx',
     'avatar': null
 }
 mainModule.init(data);
-*/

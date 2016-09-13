@@ -17,8 +17,17 @@ export default {
         var value1 = $('#picker-device').val();
         var value2 = $('#picker-device-2').val();
         if (value1 && value2) {
-            var year = {'2015-2016': '2015-2016', '2016-2017': '2016-2017'}[value1];
-            var term = {'第一学期': '1', '第二学期': '2'}[value2];
+            var year = {
+                '2013-2014': '2013-2014', 
+                '2014-2015': '2014-2015', 
+                '2015-2016': '2015-2016', 
+                '2016-2017': '2016-2017'
+            }[value1];
+            var term = {
+                '第一学期': '1', 
+                '第二学期': '2'
+            }[value2];
+            
             var query = 'user_id=' + data.user_id + '&year='+ year + '&term=' + term;
             $('#go-to-detail').attr('href','page/detail.html?' + query);
         } 

@@ -8,8 +8,8 @@ export default {
     //     request(params);
     // },
     getDetailByYT(params) {
-        //params.path = '/achievement/' + params.user_id + '/query?year=' + params.year + '&term=' + params.term;
-        params.path = '/mock.json';
+        params.path = '/achievement/' + params.user_id + '/query?year=' + params.year + '&term=' + params.term;
+        // params.path = '/mock.json';
         request(params);
     }
 };
