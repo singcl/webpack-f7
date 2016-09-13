@@ -8,6 +8,7 @@ export default {
             var myPicker = myApp.picker({
                 input: params[index].input,
                 cols: params[index].cols,
+                toolbarCloseText:'完成',
                 onClose: function () {
                     Tool.setQuery(data);
                 }
